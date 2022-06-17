@@ -1,0 +1,42 @@
+/* Take an integer from user,generate that many fibonacci numbers and store in an array.
+   Display the array.
+   
+   Sample output:
+   Enter a number : 8
+   First 8 Fibonacci numbers : 
+
+*/
+
+import java.util.Scanner;
+
+public class Task2 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a number : ");
+		int fibbo = input.nextInt();
+
+		int[] series = new int[fibbo];
+
+		// initialized first two index
+
+		series[0] = 0;
+		series[1] = 1;
+
+		// finding series
+
+		for (int i = 2; i < fibbo; i++) {
+			series[i] = series[i - 1] + series[i - 2];
+		}
+		
+		//print
+		
+		System.out.println("First " + fibbo + " Fibonacci numbers :");
+		
+		for (int i = 0; i < fibbo; i++) {
+			System.out.println(series[i]);
+		}
+
+	}
+
+}
