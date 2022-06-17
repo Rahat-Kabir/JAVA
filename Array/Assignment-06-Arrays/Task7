@@ -1,0 +1,77 @@
+/* In the task , you will find the summation of two matrices . Read two integer,m and n form 
+ * the user. These are dimension of the matrices you have to find the summation of.Next,
+ * read the elements of the matrices from the user. Then print the two matrices you read and
+ * finally,find the sum of two matrices and print it.
+ */
+ 
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Task7 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int sum1 = 0;
+		System.out.println("-----For first Matrices----- ");
+		System.out.println("Enter how many row :");
+		int row = input.nextInt();
+		System.out.println("Enter how many Column : ");
+		int column = input.nextInt();
+
+		int[][] array = new int[row][column];
+		
+		//taking input for first matrices
+		
+		System.out.println("Matrix " + row + "X" + column + " = ");
+
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < column; j++) {
+				array[i][j] = input.nextInt();
+			}
+		}
+		System.out.println("Enterted first Matrix : ");
+		System.out.println(Arrays.deepToString(array));
+		//Summation of first matrices
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < column; j++) {
+				sum1 += array[i][j];
+			}
+		}
+		//display summation of first matrices
+		System.out.println("\nSummation of First Matrice : " + sum1);
+		System.out.println("---------------------");
+		
+		//start second matrices
+		
+		int sum2 = 0;
+		System.out.println("-----For second Matrices------");
+		System.out.println("Enter how many row :");
+		int row2 = input.nextInt();
+		System.out.println("Enter how many Column : ");
+		int column2 = input.nextInt();
+
+		int[][] array2 = new int[row2][column2];
+		System.out.println("Matrix " + row2 + "X" + column2 + " = ");
+		//taking user input for second matrices
+		for (int i = 0; i < row2; i++) {
+			for (int j = 0; j < column2; j++) {
+				array2[i][j] = input.nextInt();
+			}
+		}
+		System.out.println("Enterted first Matrix : ");
+		System.out.println(Arrays.deepToString(array2));
+		//summation of second matrices
+		for (int i = 0; i < row2; i++) {
+			for (int j = 0; j < column2; j++) {
+				sum2 += array2[i][j];
+			}
+		}
+		//display summation of second matrices
+		System.out.println("\nSummation of Second Matrice : " + sum2);
+		System.out.println();
+		//display summation of all two matrices
+		System.out.println("Summation of two matrices : "+(sum1+sum2));
+	}
+
+}
