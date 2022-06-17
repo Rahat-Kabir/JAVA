@@ -1,0 +1,42 @@
+/*Declare an integer array of size 6,initialize it with user input,
+  calculate and print the average. Now calculate the percentage of numbers
+  that are above that average.
+   
+  For example:
+  If 3 of the array elements are greater than average,percentage is : 3*100/6=50%
+*/
+
+import java.util.Scanner;
+
+public class percentageAboveThatAverage {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int sum = 0;
+		double avg=0;
+		double percentage=0;
+		
+		//array of size 6
+		
+		int[] arr = new int[6];
+		
+		System.out.println("Enter all elements : ");
+		for(int i=0;i<6;i++) {
+			arr[i]=input.nextInt();
+			sum+=arr[i];
+		}
+	
+			avg=sum/6;
+			System.out.println("Average : "+avg);
+		
+		for(int i=0;i<6;i++) {
+			if(arr[i]>avg) {
+				percentage=arr[i]*100/6;
+			}
+			
+		}
+		System.out.println("Percentage "+percentage+"%");
+
+	}
+
+}
