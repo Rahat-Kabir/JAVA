@@ -1,0 +1,44 @@
+/* Take input of a 3X3 matrix and display the sum of its main diagonal element.
+   For the following matrix, your program should display 12 .(Because, 5+3+4 = 12).
+   5 2 1
+   0 3 7
+   6 8 4
+ */
+ 
+import java.util.Arrays;
+import java.util.Scanner;
+public class Task6 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int sum=0;
+		int[][] array = new int[3][3];
+		
+		//input 3x3 from user
+		
+		System.out.println("3X3 matrix :");
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<3;j++) {
+				array[i][j]=input.nextInt();	
+			}
+			
+		}
+		System.out.println("Entered Matrix : ");
+		System.out.println(Arrays.deepToString(array));
+		input.close();
+		
+		//Finding summation of main Diagonal
+		
+		for(int i=0;i<3;i++) {
+			
+			for(int j=0;j<3;j++) {
+				if(i==j) {
+					sum+=array[i][j];
+				}
+			}
+		}
+		
+		System.out.println("\nSummation of main Diagonal : "+sum);
+		
+	}
+}
