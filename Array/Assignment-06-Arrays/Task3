@@ -1,0 +1,76 @@
+/* Take 3X3 array and initial it with these values :
+ 
+   3 4 9
+   2 9 11
+   4 6 0
+   
+   Calculate and print the sum for each row,column and both diagonals.
+ */
+
+import java.util.Scanner;
+
+public class Task3 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int sumOfRow = 0;
+		int sumOfCol = 0;
+		int sumOfDiagonal1 = 0;
+		int sumOfDiagonal2 = 0;
+
+		int[][] integer = { 
+				{ 3, 4, 9 },
+				{ 2, 9, 11 }, 
+				{ 4, 6, 0 }
+
+		};
+
+		// find summation of row
+
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				sumOfRow += integer[i][j];
+			}
+			System.out.println("Summation of row number " + (i + 1) + " is : " +sumOfRow);
+		}
+
+		System.out.println();
+
+		// finding summation of column
+
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				sumOfCol += integer[j][i];
+			}
+			System.out.println("Summation of column number " + (i + 1) + " is : " +sumOfCol);
+		}
+
+		// finding summation of diagonal1
+
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (i==j) {
+					sumOfDiagonal1 += integer[i][j];
+				}
+			}
+
+		}
+		System.out.println("\nSummation of Diagonal 1 : " + sumOfDiagonal1);
+		
+		
+		//finding summation of Diagonal2
+		
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<3;j++) {
+				if((i+j)==2) {
+					sumOfDiagonal2+=integer[i][j];
+				}
+			}
+			
+		}
+		
+		System.out.println("\nSummation of Diagonal 2 : "+sumOfDiagonal2);
+		
+
+	}
+}
