@@ -1,5 +1,5 @@
 
-public class TestStac {
+public class TestStack {
 	public static void main(String[] abc) {
 		Stack s = new Stack();
 		s.push(1);
